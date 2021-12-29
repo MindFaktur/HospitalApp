@@ -12,7 +12,8 @@ public class Patient {
     String name, address, emailID, disease, patientId;
     long mobNo, age;
 
-    Map<Gender,String> info;
+    Gender gender;
+
 
     @Override
     public String toString() {
@@ -24,7 +25,7 @@ public class Patient {
                 ", patientId='" + patientId + '\n' +
                 ", mobNo=" + mobNo + '\n' +
                 ", age=" + age + '\n' +
-                ", info=" + info + '\n' +
-                '}';
+                ", Gender=" + gender + "}";
     }
 }
+
