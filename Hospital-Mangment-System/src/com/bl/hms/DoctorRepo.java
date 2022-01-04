@@ -1,10 +1,7 @@
 package com.bl.hms;
 
 import javax.print.Doc;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class DoctorRepo {
     public static DoctorRepo instance;
@@ -13,12 +10,13 @@ public class DoctorRepo {
 
     }
 
-    public static DoctorRepo getinstance(){
+    public static synchronized DoctorRepo getinstance(){
         if(instance == null){
             instance = new DoctorRepo();
         }
         return instance;
     }
+
 
     void addMethod(Doctor dt)
     {

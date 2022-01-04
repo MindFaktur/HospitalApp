@@ -9,7 +9,7 @@ public class PatientRepo {
     public static PatientRepo instance;
     Set<Patient> patientSet = new HashSet<>();
 
-    public static PatientRepo getInstance(){
+    public static synchronized PatientRepo getInstance(){
         if( instance == null ){
             instance = new PatientRepo();
         }

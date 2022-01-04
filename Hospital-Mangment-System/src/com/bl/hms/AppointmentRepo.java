@@ -11,7 +11,7 @@ public class AppointmentRepo {
 
     AppointmentRepo(){
     }
-    public static AppointmentRepo getInstance(){
+    public static synchronized AppointmentRepo getInstance(){
         if ( instance == null){
             instance = new AppointmentRepo();
         }

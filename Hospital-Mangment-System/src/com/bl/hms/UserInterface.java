@@ -17,7 +17,58 @@ public class UserInterface {
         return instance;
     }
 
-    public int ShowMainMenu() {
+    public int mainMenu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Press" +
+                "\n 1) Doctor " +
+                "\n 2) Patient " +
+                "\n 3) Appointment " +
+                "\n 4) Exit "
+        );
+        return scanner.nextInt();
+    }
+
+    public int doctorMenu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("  This is Docotr Menu " + "" +
+                        "\n   Press " +
+                        "\n 1.Add Doctor " +
+                        "\n 2.Update Doctor " +
+                        "\n 3.Delete Doctor" +
+                        "\n 4.Show All Doctors List " +
+                        "\n 5.Exit "
+        );
+        return scanner.nextInt();
+    }
+
+    public int patientMenu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("  This is Patient Menu " + "" +
+                "\n   Press " +
+                "\n 1.Add Patient " +
+                "\n 2.Update Patient " +
+                "\n 3.Delete Patient" +
+                "\n 4.Show All Patient List " +
+                "\n 5.Exit "
+        );
+        return scanner.nextInt();
+    }
+
+    public int appointmentMenu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("  This is Appointment Menu " + "" +
+                "\n   Press " +
+                "\n 1.Add Appointment " +
+                "\n 2.Update Appointment " +
+                "\n 3.Delete Appointment" +
+                "\n 4.Show All Appointment List " +
+                "\n 5.Exit "
+        );
+        return scanner.nextInt();
+    }
+
+
+    /*public int ShowMainMenu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Hospital Management System");
         System.out.println("1.Add Doctor \n2.Update Doctor \n3.Delete Doctor" +
@@ -28,7 +79,7 @@ public class UserInterface {
 
         System.out.println("Select Your Option :");
         return scanner.nextInt();
-    }
+    }*/
 
     public void printAllDoctor(Set<Doctor> doctorSet) {
         for ( Doctor doctor : doctorSet ) {
@@ -271,9 +322,11 @@ public class UserInterface {
 
     public void updateAppointmentDetails(Appointment updateAppointment) {
         Scanner scanner = new Scanner(System.in);
-        while (true){
+        int numSelected = 0;
+
+        while ( numSelected != Constants.APPOINTMENTEXIT ){
             System.out.println("Enter where u want to update \n1.patientId\n2.doctorId\n3.appointmentDate\n4.roomNumber\n5.Exit");
-            int numSelected = scanner.nextInt();
+            numSelected = scanner.nextInt();
             switch (numSelected) {
                 case 1:
                     System.out.println("Enter patientId");
